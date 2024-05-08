@@ -119,8 +119,8 @@ for i = 1:length(reynolds_numbers)
     
     % Write header for each Reynolds-Mach pair
     fprintf(fileID, 'COMMENT#1\n');
-    fprintf(fileID, '%10.1f %6.3f\n ', re_num);
-    fprintf(fileID, '\n Vahana1                      0%d%d0%d%d0%d%d\n', length(mach_numbers), numel(data_struct.(re_key).(mach_key).Alpha), length(mach_numbers), numel(data_struct.(re_key).(mach_key).Alpha), length(mach_numbers), numel(data_struct.(re_key).(mach_key).Alpha));
+    fprintf(fileID, '%10.1f %6.3f     %f\n ', re_num, 0.1);
+    fprintf(fileID, '\nVahana1                       0%d%d0%d%d0%d%d\n', length(mach_numbers), 2+numel(data_struct.(re_key).(mach_key).Alpha), length(mach_numbers), 2+numel(data_struct.(re_key).(mach_key).Alpha), length(mach_numbers), 2+numel(data_struct.(re_key).(mach_key).Alpha));
 
     for j = 1:length(mach_numbers)
         re = str2double(re_key(3:end));

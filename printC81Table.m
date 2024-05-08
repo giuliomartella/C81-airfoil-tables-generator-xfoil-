@@ -8,7 +8,11 @@ function printC81Table(fileID, alpha, data, ma_double)
 
 % Print Mach numbers line
 fprintf(fileID, ' %s\n', sprintf('%.1f ', ma_double));
-
+fprintf(fileID, ' %.1f   ',-180.0);
+for i =1:numel(ma_double)-1
+fprintf(fileID, ' %.1f   ',0.0);
+end
+fprintf(fileID, ' %.1f \n  ',0.0);
 % Loop over each angle of attack
 for k = 1:length(alpha)
     % Print angle of attack
@@ -20,4 +24,11 @@ for k = 1:length(alpha)
     % Move to next line
     fprintf(fileID, '\n');
 end
+fprintf(fileID, ' %.1f   ',+180.0);
+for i =1:numel(ma_double)-1
+fprintf(fileID, ' %.1f   ',0.0);
+end
+fprintf(fileID, ' %.1f \n  ',0.0);
+
+
 end
